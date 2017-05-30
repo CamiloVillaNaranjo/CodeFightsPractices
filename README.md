@@ -1,2 +1,2 @@
 # CodeFightsPractices
-Self-study project, with the intention of stay tunned in Software Development, through Algorthym excersices,
+Self-study project, with the intention of stay tuned in Software Development, through Algorithm exercises.
