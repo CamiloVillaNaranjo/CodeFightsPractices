@@ -12,16 +12,35 @@ namespace ArcadeFights
 
         public static void Main()
         {
-            string s = "aabb";
+            string s = "zyyzzzzz";
             Console.WriteLine(PalindromeRearranging(s));
             Console.ReadLine();
         }
 
         static bool PalindromeRearranging(string inputString)
         {
-            bool r = false;
+            var b = inputString.GroupBy(c => c).Where(g => g.Count() % 2 == 1).Count();
+            var d = inputString.GroupBy(c => c).Where(g => g.Count() % 1 == 1);
 
-            return r;
+            foreach (var item in inputString.GroupBy(c => c))
+            {
+                var s = item.Key;
+            }
+
+            return true;
+        }
+
+        static bool IsPalinfrome(string v, int cI, int cF)
+        {
+            if (v[cI] != v[cF])
+                return false;
+            else
+            {
+                if (cI >= cF)
+                    return true;
+            }
+
+            return IsPalinfrome(v, cI + 1, cF - 1);
         }
     }
 }
