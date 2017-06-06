@@ -1,0 +1,11 @@
+{
+  "ServerUri": "http://172.17.34.120:9000/sonar/",
+  "Organization": "Nexos Software",
+  "ProjectKey": "net10",
+  "Profiles": {
+    "CSharp": {
+      "ProfileKey": "cs-sonar-way-13685",
+      "ProfileTimestamp": "2017-02-13T16:48:03-05:00"
+    }
+  }
+}

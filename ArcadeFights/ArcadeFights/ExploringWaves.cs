@@ -12,35 +12,56 @@ namespace ArcadeFights
 
         public static void Main()
         {
-            string s = "zyyzzzzz";
-            Console.WriteLine(PalindromeRearranging(s));
+            int[] a = new int[] { 1, 2, 3 };
+            int[] b = new int[] { 1, 2, 3 };
+
+            Console.WriteLine(areSimilar(a, b));
+
+            //string s = "zyyzzzzz";
+            //Console.WriteLine(PalindromeRearranging(s));
+
             Console.ReadLine();
         }
 
         static bool PalindromeRearranging(string inputString)
         {
-            var b = inputString.GroupBy(c => c).Where(g => g.Count() % 2 == 1).Count();
-            var d = inputString.GroupBy(c => c).Where(g => g.Count() % 1 == 1);
-
-            foreach (var item in inputString.GroupBy(c => c))
-            {
-                var s = item.Key;
-            }
-
-            return true;
+            return inputString.GroupBy(c => c)
+                .Where(g => g.Count() % 2 == 1)
+                .Count() <= 1;
         }
 
-        static bool IsPalinfrome(string v, int cI, int cF)
+        static bool areSimilar(int[] a, int[] b)
         {
-            if (v[cI] != v[cF])
-                return false;
-            else
+            bool result = false;
+
+            int countEq = 0;
+            int countDif = 0;
+
+            var ls = (long)Math.Pow(10, 5);
+            if (3 > a.Length || a.Length > ls)
+                result = false;
+            else if (a.Length == b.Length)
             {
-                if (cI >= cF)
-                    return true;
+                for (int i = 0; i < a.Length; i++)
+                {
+                    if (a[i] == b[i])
+                        countEq += 1;
+                    else
+                        countDif += 1;
+                }
             }
 
-            return IsPalinfrome(v, cI + 1, cF - 1);
+            if (countDif > 2) result = false;
+            else
+            {
+                if (countDif <= 2 && a.Distinct().Count() >= 3 && a.Except(b).ToList().Count == 0) result = true;
+                else
+                {
+                    if (countEq > a.Count() && a.Distinct().Count() >= 3) result = true;
+                }
+            }
+
+            return result;
         }
     }
 }
