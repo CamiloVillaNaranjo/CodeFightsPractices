@@ -1,6 +1,6 @@
 {
   "ServerUri": "http://172.17.34.120:9000/sonar/",
-  "Organization": "Nexos Software",
+  "Organization": null,
   "ProjectKey": "net10",
   "Profiles": {
     "CSharp": {

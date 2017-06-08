@@ -117,7 +117,7 @@ namespace ArcadeFights
 
         static int swapAdjacentBits(int n)
         {
-            return Convert.ToString(n,2);
+            return 0; //Convert.ToString(n,2);
         }
 
     }
